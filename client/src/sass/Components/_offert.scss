@@ -1,0 +1,133 @@
+.offert{
+
+	&__introduction{
+		background-color: $color-primary-dark-2;
+		padding:5rem 2rem;
+		display:flex;
+		justify-content: space-around;
+		align-items: center;
+
+		h1{
+			flex:0 0 70%;
+			margin:0 auto;
+			font-family: $font-rajdhani;
+			font-size:3.5rem;
+			text-shadow: $shadow-text-small;
+			text-transform: uppercase;
+			color:white;
+		}
+
+		&--rocket{
+			width:12rem;
+			height:12rem;
+			fill:lighten(orangered,10%);
+			margin:0 auto;
+
+			#upper{
+  				stroke-dasharray: 50;
+  				stroke-dashoffset: 10;
+  				animation: dash 1s linear alternate infinite;
+			}
+
+			#middle{
+  				stroke-dasharray: 80;
+  				stroke-dashoffset: 80;
+  				animation: dashLong 1s linear alternate infinite;
+  				animation-delay: .6s;
+  				transition:all 0.3s;
+			}
+			#down{
+  				stroke-dasharray: 50;
+  				stroke-dashoffset: 10;
+  				animation: dash 1s linear alternate infinite;
+  				animation-delay: .3s;
+  				transition:all 0.3s;
+			}
+		}
+	}
+
+	&__section{
+		padding:10rem 2rem;
+		
+
+		h1{
+			margin-bottom: 5rem;
+			color:white;
+			font-family: $font-rajdhani;
+			font-size: 5rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			display: inline-block;
+			padding:.5rem 2rem ;
+			border-radius: 5px;
+		}
+		
+		&--para{
+			position:relative;
+			&-icon{
+				position:absolute;
+				top:50%;
+				left:50%;
+				transform:translate(-50%,-50%);
+				color:rgba(orangered,.3);
+				width:100%;
+				font-size: 20rem;
+				z-index: -1;
+
+			}
+			
+			&-text{
+				margin: 2rem auto;
+				font-family: $font-poiret;
+				font-size: 2.2rem;
+				font-weight: 700;
+				text-align: center;
+				letter-spacing: .2rem;
+				text-shadow: $shadow-text-small;
+
+				span{
+					background-color: $color-primary-dark;
+					padding:.3rem 1rem;
+					color:white;
+					line-height: 1;
+					font-weight: 300;
+					border-radius: 3px;
+					transform: scale(1.2);
+				}
+			}
+		}
+	}
+
+	&__starter{
+
+		h1{
+			background-color: $color-primary-dark;
+		}
+	}
+	&__pro{
+
+		h1{
+			background-color: $color-secondary;
+		}
+
+		&--para{
+			&-icon{
+				transform:translate(-50%,-50%) rotate(-45deg);
+				color:rgba($color-secondary,.4);
+			}
+		}
+	}
+	&__advanced{
+
+		h1{
+			background-color: $color-tertiary;
+		}
+		&--para{
+			&-icon{
+				transform:translate(-50%,-50%) rotate(-45deg);
+				color:rgba($color-tertiary,.4);
+			}
+		}
+	}
+}
+

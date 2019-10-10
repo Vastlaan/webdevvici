@@ -1,0 +1,30 @@
+//Colours
+
+$color-primary: #46948f;
+$color-primary-dark: #2a5855;
+$color-primary-dark-2: #0e1d1c;
+$color-primary-light: #7db4b0;
+$color-primary-light-2: #b5d4d2;
+$color-primary-light-3:lighten($color-primary-light-2,20%);
+
+$color-secondary: #469468;
+$color-secondary-dark:#2a583e;
+$color-secondary-light:#6aa986;
+
+$color-tertiary: #94464b;
+$color-tertiary-light:#be9093;
+$color-tertiary-dark:#582a2d;
+
+$color-markup: #FFFF4D;	//yellow
+
+
+//Fonts
+
+$font-poiret: 'Poiret One', cursive;
+$font-rajdhani: 'Rajdhani', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-orbitron: 'Orbitron', sans-serif;
+
+//shadows
+
+$shadow-text-small: .3rem .3rem .5rem rgba(0,0,0,.3);

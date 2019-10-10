@@ -1,0 +1,100 @@
+.services{
+
+	display:flex;
+	flex-wrap: wrap;
+
+	@include respond(m){
+		flex-direction: column;
+	}
+	
+
+	&__section{
+		opacity:0;
+		flex:0 0 33.33%;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		filter:contrast(150%);
+
+		&>*{
+			transition:transform .5s;
+		}
+		&:hover{
+			&>*{
+				transform:scale(1.05);
+			}
+		}
+
+		&--icon{
+			width:8rem;
+			height:8rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			border:2px solid white;
+			box-shadow: 0 0 1rem rgba(0,0,0,.3);
+			margin:2rem;
+
+			&-i{
+				font-size: 5rem;
+				color:white;
+			}
+		}
+
+		&--header{
+			font-family: $font-rajdhani;
+			font-size: 4rem;
+			font-weight: 500;
+			color:white;
+			text-transform: uppercase;
+		}
+		&--para{
+			padding:2rem;
+			font-family: $font-poiret;
+			font-size: 1.8rem;
+			font-weight: 500;
+			color:white;
+			
+		}
+		&--btn{
+			padding:.75rem 4rem;
+			font-family: $font-rajdhani;
+			font-size: 2rem;
+			font-weight: 500;
+			letter-spacing: .2rem;
+			line-height: 1;
+			color:white;
+			border:1px solid white;
+			box-shadow: 0 .5rem .5rem rgba(0,0,0,.3);
+			border-radius: 100px;
+			text-decoration: none;
+			margin-bottom: 2rem;
+			transition:all .5s;
+
+			&:hover{
+				transform: scale(1.05) translateY(-3px);
+				box-shadow: 0 .8rem 1rem rgba(0,0,0,.2);
+			}
+
+		}
+	}
+
+	&__web{
+		
+		background-image: linear-gradient(to right, $color-primary-dark , $color-primary ) ;
+		transition:all .3s;
+
+		
+	}
+	&__seo{
+		
+		background-image: linear-gradient(to right,$color-secondary ,lighten($color-secondary,10%) ) ;
+		transition:all .5s;
+	}
+	&__marketing{
+	
+		background-image: linear-gradient(to right, $color-tertiary ,$color-tertiary-light );
+		transition:all .7s;
+	}
+}

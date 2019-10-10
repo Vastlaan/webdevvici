@@ -1,0 +1,230 @@
+.footer{
+	background-image:linear-gradient(to right, $color-secondary, $color-primary, $color-tertiary);
+	position:relative;
+	z-index: 5;
+	filter:contrast(150%);
+	padding:5rem 0;
+	
+
+	&>*{
+		z-index: 7;
+	}
+	
+	&::after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: 6;
+		background-image: linear-gradient(to bottom, rgba(black,.1), rgba(black,.8));
+		filter:contrast(150%);
+	}
+
+	&__contact{
+		display:flex;
+
+		@include respond(xs){
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&--data{
+			flex:0 0 50%;
+			display:flex;
+			flex-direction: column;
+			padding:2rem;
+
+			&-logo{
+				&>*{
+					width:20rem;
+					height:20rem;
+				}
+
+			}
+			&-name{
+				z-index: 9;
+				//margin-top: 5rem;
+				font-family: $font-rajdhani;
+				line-height: 1;
+				font-size: 6.5rem;
+				font-weight: 700;
+				background-clip: text;
+				color:rgba(#d4d7d0,1);
+				text-shadow: .3rem .3rem .5rem rgba(0,0,0,.1);
+			}
+			&-subname{
+				z-index: 9;
+				margin-bottom: 5rem;
+				font-family: $font-rajdhani;
+				font-weight: 500;
+				line-height: 1;
+				font-size: 2.6rem;
+				color:rgba(#d4d7d0,1);
+				text-shadow: .3rem .3rem .5rem rgba(0,0,0,.1);
+			}
+			&-social{
+				list-style: none;
+				display:flex;
+				li{
+					color:white;
+					font-size: 3rem;
+					margin-right: 2rem;
+					transition:all .3s;
+					cursor:pointer;
+					z-index: 9;
+
+					&:hover{
+						transform:scale(1.3);
+						color:$color-primary;
+					}
+				}
+			}
+			&-phone{
+				margin:2rem 0 1rem 0;
+				z-index: 9;
+				display:flex;
+				align-items: center;
+				color: white;
+				text-decoration: none;
+				font-family: $font-poiret;
+				font-size: 2rem;
+				transition:all .3s;
+				&:hover{
+					color:#FFFF4D;
+				}
+
+				&-i{
+					font-size: 2.4rem;
+					margin-right: 2rem;
+					color:$color-secondary-light;
+					filter:contrast(150%);
+				}
+
+			}
+			&-email{
+				margin:0 0 1rem 0;
+				z-index: 9;
+				display:flex;
+				align-items: center;
+				color: white;
+				text-decoration: none;
+				font-family: $font-poiret;
+				font-size: 2rem;
+				transition:all .3s;
+				&:hover{
+					color:#FFFF4D;
+				}
+				&-i{
+					font-size: 2.4rem;
+					margin-right: 2rem;
+					color:$color-tertiary-light;
+					filter:contrast(150%);
+				}
+				
+			}
+			&-address{
+				list-style: none;
+				z-index: 9;
+
+				&-i{
+					font-size: 2.4rem;
+					margin-right: 1rem;
+					color:$color-primary-light;
+					filter:contrast(150%);
+				}
+
+				li{
+					font-family: $font-poiret;
+					font-size: 2rem;
+					color:white;
+				}
+				&>*:not(:first-child){
+					margin-left: 4rem;
+				}
+				
+			}
+		}
+
+		&--form{
+			flex:0 0 50%;
+			display:flex;
+			align-items: center;
+			flex-direction: column;
+			@include respond(xs){
+				margin-top: 5rem;
+			}
+
+			&-header{
+				z-index: 9;
+				font-family: $font-orbitron;
+				font-size: 4rem;
+				font-weight: 300;
+				text-shadow: .3rem .3rem .5rem rgba(0,0,0,.1);
+				color:white;
+			}
+
+			input, textarea{
+				border:none;
+				margin:2rem auto;
+				padding:1rem;
+				width:90%;
+				background-color: rgba(white,.1);
+				border-radius: 5px;
+				z-index: 10;
+				color:white;
+				&::placeholder{
+					color:white;
+					font-family: $font-poiret;
+					letter-spacing: .2rem;
+					font-size: 1.6rem;
+				}
+				&:focus{
+					outline:none;
+					box-shadow: 0 0 1rem rgba($color-secondary-light,.6);
+				}
+			}
+			textarea{
+				height:15rem;
+			}
+			button{
+				border:none;
+				width:50%;
+				margin: 2rem auto;
+				padding:1rem 2rem;
+				background-color: rgba($color-tertiary,1);
+				color:white;
+				font-family: $font-poiret;
+				font-size: 2rem;
+				letter-spacing: .2rem;
+				filter:contrast(110%);
+				border-radius: 5px;
+				z-index: 10;
+				cursor:pointer;
+				transition: all .3s;
+				&:hover{
+					transform:scale(1.1);
+				}
+				&:focus{
+					outline:none;
+				}
+			}
+			&-name{
+
+			}
+			&-email{
+				
+			}
+			&-phone{
+				
+			}
+			&-message{
+				
+			}
+		}
+
+
+	}
+
+}
