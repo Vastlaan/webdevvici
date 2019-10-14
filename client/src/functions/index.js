@@ -12,6 +12,7 @@ export function triggerEffectAbout(){
 
 		const enterChangeAt = window.innerHeight + window.pageYOffset
 
+
 		if(aboutBottomBoundry<=enterChangeAt){
 			about.style.opacity="1"
 			about.style.transform="translateX(0)"
@@ -56,7 +57,7 @@ export function triggerEffectBoard(){
 		document.querySelector('.board__background--img').style.transform="translate(-50%, -50%) scale(1.5)"
 	}
 }
-//Header Component on App
+//Menu Component on App
 export function changePositionOnScroll(){
 	const menu = document.querySelector('.menu')
 	const header = document.querySelector('.header')
@@ -68,7 +69,7 @@ export function changePositionOnScroll(){
 		menu.style.top="0"
 		menu.style.left="0"
 		menu.style.backgroundColor="white"
-		menu.style.width="100%"
+		menu.style.width="100vw"
 		menu.style.padding="1rem 2rem"
 		menu.style.margin="0"
 

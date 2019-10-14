@@ -5,7 +5,7 @@ function Menu() {
 	useEffect(()=>{
 		
 		changePositionOnScroll()
-		window.addEventListener('scroll', changePositionOnScroll)
+		window.addEventListener('scroll', changePositionOnScroll, { capture: false, passive: true})
 		return ()=>{
 			window.removeEventListener('scroll', changePositionOnScroll)
 		}

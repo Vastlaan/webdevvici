@@ -60,7 +60,7 @@ function Reviews(){
 			}
 		}
 		//use function
-		window.addEventListener("scroll",displayBackground)
+		window.addEventListener("scroll",displayBackground, { capture: false, passive: true})
 		//clear interval when unmount
 		return ()=>{
 			clearInterval(quotesSlide)

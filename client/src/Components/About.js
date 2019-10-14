@@ -5,7 +5,7 @@ import {triggerEffectAbout} from '../functions'
 function About(){
 
 	useEffect(()=>{
-		window.addEventListener("scroll", triggerEffectAbout);
+		window.addEventListener("scroll", triggerEffectAbout, { capture: false, passive: true});
 	    return () => {
 	      window.removeEventListener("scroll", triggerEffectAbout);
 	    };

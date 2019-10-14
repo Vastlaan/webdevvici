@@ -5,7 +5,7 @@ import {moveImage} from '../functions'
 function Responsive(){
 
 	useEffect(()=>{
-		window.addEventListener("scroll", moveImage);
+		window.addEventListener("scroll", moveImage, { capture: false, passive: true});
 
 	    return () => {
 	      window.removeEventListener("scroll", moveImage);

@@ -6,7 +6,7 @@ function Board(){
 
 	
 	useEffect(()=>{
-		window.addEventListener("scroll", triggerEffectBoard);
+		window.addEventListener("scroll", triggerEffectBoard, { capture: false, passive: true});
 	    return () => {
 	      window.removeEventListener("scroll", triggerEffectBoard);
 	    };

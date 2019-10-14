@@ -745,150 +745,150 @@ body {
         .footer__contact--form button:focus {
           outline: none; }
 
-.about__mission {
-  display: flex;
-  flex-direction: column;
-  background-color: #0e1d1c;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  padding: 10rem 2rem;
-  animation: slideLeft .6s ease-out; }
-  @media only screen and (max-width: 64.5em) {
-    .about__mission {
-      flex-direction: column; }
-      .about__mission::after {
-        transform: scale(1.2); } }
-  @media only screen and (max-width: 48.5em) {
-    .about__mission::after {
-      top: 0%;
-      right: -50%; } }
-  @media only screen and (max-width: 40.5em) {
-    .about__mission::after {
-      top: 0%; } }
-  .about__mission::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100vw;
-    height: 100vw;
-    border-radius: 50%;
-    background-color: #be9093;
-    z-index: -11; }
-  .about__mission--header {
-    font-family: "Orbitron", sans-serif;
-    font-size: 5rem;
-    letter-spacing: .3rem;
-    color: white;
-    text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
-    margin-top: 0rem; }
-  .about__mission--para {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 2.5rem;
-    color: white;
-    text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3); }
-
-.about__quote {
-  width: 100%;
-  padding: 15rem 5%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: "Rajdhani", sans-serif;
-  transition: transform .5s; }
-  .about__quote--left {
-    align-self: flex-start;
-    font-size: 5rem;
-    line-height: 1;
-    color: #6aa986; }
-    @media only screen and (max-width: 40.5em) {
-      .about__quote--left {
-        font-size: 3.5rem; } }
-  .about__quote--right {
-    align-self: flex-end;
-    font-size: 5rem;
-    line-height: 1;
-    color: #6aa986; }
-    @media only screen and (max-width: 40.5em) {
-      .about__quote--right {
-        font-size: 3.5rem; } }
-  .about__quote h1 {
-    font-size: 3.5rem;
-    font-family: "Poiret One", cursive;
-    font-weight: 700;
-    letter-spacing: .2rem;
-    padding: 0 2rem;
-    color: #2a5855;
-    text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3); }
-    @media only screen and (max-width: 40.5em) {
-      .about__quote h1 {
-        font-size: 2.8rem; } }
-
-.about__services {
-  position: static;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  justify-content: center;
-  grid-row-gap: 5rem;
-  margin-bottom: 15rem; }
-  @media only screen and (max-width: 40.5em) {
-    .about__services {
-      grid-template-columns: 1fr;
-      grid-row-gap: 2rem; } }
-  .about__services--para {
-    font-family: "Rajdhani", sans-serif;
-    font-size: 2.5rem;
-    color: #2a5855;
-    text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
-    padding: 2rem; }
-  .about__services--list {
-    list-style: none;
+.about {
+  overflow: hidden; }
+  .about__mission {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    margin: 0 auto;
-    transition: all .5s; }
+    background-color: #0e1d1c;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding: 10rem 2rem;
+    animation: slideLeft .6s ease-out; }
+    @media only screen and (max-width: 64.5em) {
+      .about__mission {
+        flex-direction: column; }
+        .about__mission::after {
+          transform: scale(1.2); } }
+    @media only screen and (max-width: 48.5em) {
+      .about__mission::after {
+        top: 0%;
+        right: -50%; } }
     @media only screen and (max-width: 40.5em) {
-      .about__services--list-1 {
-        grid-row: 2/3; } }
-    @media only screen and (max-width: 40.5em) {
-      .about__services--list-2 {
-        grid-row: 4/5; } }
-    @media only screen and (max-width: 40.5em) {
-      .about__services--list-3 {
-        grid-row: 6/7; } }
-    .about__services--list-item {
-      width: 100%;
+      .about__mission::after {
+        top: 0%; } }
+    .about__mission::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100vw;
+      height: 100vw;
+      border-radius: 50%;
+      background-color: #be9093;
+      z-index: -11; }
+    .about__mission--header {
+      font-family: "Orbitron", sans-serif;
+      font-size: 5rem;
+      letter-spacing: .3rem;
+      color: white;
+      text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+      margin-top: 0rem; }
+    .about__mission--para {
       font-family: "Rajdhani", sans-serif;
       font-size: 2.5rem;
-      background-color: #2a5855;
-      padding: .5rem 1rem;
-      margin: 3rem auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50px;
-      box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
       color: white;
-      position: relative; }
-      .about__services--list-item-1 > * {
-        color: #6aa986; }
-      .about__services--list-item-2 > * {
-        color: #be9093; }
-      .about__services--list-item-3 > * {
-        color: #7db4b0; }
-      .about__services--list-item-i {
-        position: absolute;
-        top: -.5rem;
-        left: -4rem;
-        font-size: 6rem;
-        margin-right: 1rem;
-        z-index: -1;
-        filter: contrast(200%) drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3)); }
+      text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3); }
+  .about__quote {
+    width: 100%;
+    padding: 15rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    transition: transform .5s; }
+    .about__quote--left {
+      align-self: flex-start;
+      font-size: 5rem;
+      line-height: 1;
+      color: #6aa986; }
+      @media only screen and (max-width: 40.5em) {
+        .about__quote--left {
+          font-size: 3.5rem; } }
+    .about__quote--right {
+      align-self: flex-end;
+      font-size: 5rem;
+      line-height: 1;
+      color: #6aa986; }
+      @media only screen and (max-width: 40.5em) {
+        .about__quote--right {
+          font-size: 3.5rem; } }
+    .about__quote h1 {
+      font-size: 3.5rem;
+      font-family: "Poiret One", cursive;
+      font-weight: 700;
+      letter-spacing: .2rem;
+      padding: 0 2rem;
+      color: #2a5855;
+      text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3); }
+      @media only screen and (max-width: 40.5em) {
+        .about__quote h1 {
+          font-size: 2.8rem; } }
+  .about__services {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    grid-row-gap: 5rem;
+    margin-bottom: 15rem; }
+    @media only screen and (max-width: 40.5em) {
+      .about__services {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem; } }
+    .about__services--para {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 2.5rem;
+      color: #2a5855;
+      text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+      padding: 2rem; }
+    .about__services--list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+      margin: 0 auto;
+      transition: all .5s; }
+      @media only screen and (max-width: 40.5em) {
+        .about__services--list-1 {
+          grid-row: 2/3; } }
+      @media only screen and (max-width: 40.5em) {
+        .about__services--list-2 {
+          grid-row: 4/5; } }
+      @media only screen and (max-width: 40.5em) {
+        .about__services--list-3 {
+          grid-row: 6/7; } }
+      .about__services--list-item {
+        width: 100%;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 2.5rem;
+        background-color: #2a5855;
+        padding: .5rem 1rem;
+        margin: 3rem auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50px;
+        box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+        color: white;
+        position: relative; }
+        .about__services--list-item-1 > * {
+          color: #6aa986; }
+        .about__services--list-item-2 > * {
+          color: #be9093; }
+        .about__services--list-item-3 > * {
+          color: #7db4b0; }
+        .about__services--list-item-i {
+          position: absolute;
+          top: -.5rem;
+          left: -4rem;
+          font-size: 6rem;
+          margin-right: 1rem;
+          z-index: -1;
+          filter: contrast(200%) drop-shadow(0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3)); }
 
 .offert__introduction {
   background-color: #0e1d1c;

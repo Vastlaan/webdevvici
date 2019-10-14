@@ -8,7 +8,7 @@ function Services() {
 	useEffect(()=>{
 		
 		showServices()
-		window.addEventListener("scroll", showServices)
+		window.addEventListener("scroll", showServices, { capture: false, passive: true})
 		return ()=>window.removeEventListener("scroll", showServices);
 	},[])
 	return(
