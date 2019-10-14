@@ -1,25 +1,12 @@
 import React, {useEffect} from 'react';
 import { MdDevices } from "react-icons/md";
 import { FaSearchengin, FaGlobe } from "react-icons/fa";
+import {showServices} from '../functions'
 
 function Services() {
 
 	useEffect(()=>{
-		const showServices = async() =>{
-			const services = document.querySelector('.services')
-			const servicesHalfView =  (services.offsetHeight / 2) + services.offsetTop;
-			const enterEffectAt = window.innerHeight + window.pageYOffset
-			if(enterEffectAt>=servicesHalfView){
-				await setTimeout(()=>document.querySelector('.services__web').style.opacity="1",100)
-				await setTimeout(()=>document.querySelector('.services__seo').style.opacity="1",300)
-				await setTimeout(()=>document.querySelector('.services__marketing').style.opacity="1",500)
-			}else{
-				document.querySelector('.services__web').style.opacity="0"
-				document.querySelector('.services__seo').style.opacity="0"
-				document.querySelector('.services__marketing').style.opacity="0"
-			}
-			
-		}
+		
 		showServices()
 		window.addEventListener("scroll", showServices)
 		return ()=>window.removeEventListener("scroll", showServices);

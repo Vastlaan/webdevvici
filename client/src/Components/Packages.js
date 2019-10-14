@@ -20,7 +20,7 @@ function Packages(){
 						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Persoonlijk advies</li>
 						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Voorwaarden</li>
 					</ul>
-					<a href='/' className='packages__offert--card-btn packages__offert--starter-btn'>Select</a>
+					<a href='/offert#starter' className='packages__offert--card-btn packages__offert--starter-btn'>Select</a>
 				</div>
 				<div className='packages__offert--pro packages__offert--card'>
 					<h3 className='packages__offert--pro-header packages__offert--card-header'>Pro</h3>
@@ -35,22 +35,22 @@ function Packages(){
 						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> tot 5 Paginas</li>
 						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> Persoonlijk advies</li>
 					</ul>
-					<a href='/' className='packages__offert--card-btn packages__offert--pro-btn'>Select</a>
+					<a href='/offert#pro' className='packages__offert--card-btn packages__offert--pro-btn'>Select</a>
 				</div>
 				<div className='packages__offert--advanced packages__offert--card'>
 					<h3 className='packages__offert--advanced-header packages__offert--card-header'>Advanced</h3>
 					<div className='packages__offert--card-price'>
-						<h6><sup>&euro;</sup> 49 <sub>per maand</sub></h6>
+						<h6><sup>&euro;</sup> 29 <sub>per maand</sub></h6>
 					</div>
 					<ul className='packages__offert--card-list packages__offert--advanced-list'>
 						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> 1 jaar contract</li>
 						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Domein naam</li>
 						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Hosting & Database</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> 15 paginas & consultaties</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> tot 10 paginas</li>
 						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Eigen email</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Advanced features</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Support</li>
 					</ul>
-					<a href='/' className='packages__offert--card-btn packages__offert--advanced-btn'>Select</a>
+					<a href='/offert#advanced' className='packages__offert--card-btn packages__offert--advanced-btn'>Select</a>
 				</div>
 			</div>
 		</div>

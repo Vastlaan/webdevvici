@@ -96,6 +96,84 @@
 				}
 			}
 		}
+
+		&--price{
+			width:50%;
+			margin:5rem auto;
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+
+			&-left{
+				align-self: flex-start;
+			}
+			&-right{
+				align-self: flex-end;
+			}
+
+			p{
+				font-family: $font-poiret;
+				font-size: 2rem;
+				color:$color-primary-dark;
+				font-weight: 700;
+			}
+			h3{
+				font-family: $font-orbitron;
+				font-size: 10rem;
+				
+				text-shadow: $shadow-text-small;
+				sup{
+					font-size: 50%;
+				}
+			}
+		}
+
+		&--description{
+			display:grid;
+			grid-template-columns: 35% 1fr;
+			grid-gap: 2rem;
+			font-family: $font-poiret;
+			font-size: 2rem;
+			letter-spacing: .2rem;
+
+			@include respond(s){
+				grid-template-columns: 45% 1fr;
+			}
+
+			&>*{
+				width:100%;
+				display:flex;
+				justify-content: center;
+				align-items: center;
+
+			}
+
+			h3{
+				grid-column: 1/3;
+				font-family: $font-poiret;
+				font-size: 4.5rem;
+			}
+
+			&-left{
+				grid-column: 1/2;
+				color:white;
+				border-radius: 5px;
+				font-weight: 700;
+				height:6rem;
+				margin:auto 0;
+
+				@include respond(xs){
+					height:10rem;
+					text-align: center;
+				}
+			}
+			&-right{
+				grid-column: 2/3;
+				color:$color-primary-dark-2;
+				font-weight: 700;
+				font-size: 1.8rem;
+			}
+		}
 	}
 
 	&__starter{

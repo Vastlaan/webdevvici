@@ -1,6 +1,15 @@
-import React from 'react'
-
+import React, {useEffect} from 'react'
+import {changePositionOnScroll} from '../functions'
 function Menu() {
+
+	useEffect(()=>{
+		
+		changePositionOnScroll()
+		window.addEventListener('scroll', changePositionOnScroll)
+		return ()=>{
+			window.removeEventListener('scroll', changePositionOnScroll)
+		}
+	},[])
 
 	return(
 		<nav className="menu">

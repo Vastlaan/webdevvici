@@ -1,3 +1,4 @@
+//About Component on App
 export function triggerEffectAbout(){
 	const about = document.querySelector('.about__quote')
 		const list1 = document.querySelector('.about__services--list-1')
@@ -43,7 +44,7 @@ export function triggerEffectAbout(){
 			list3.style.transform="translateX(-100%)"
 		}
 }
-
+//Board Component on Landing
 export function triggerEffectBoard(){
 	const boardBottomBoundry = document.querySelector('.board').offsetHeight + document.querySelector('.board').offsetTop
 	const enterChangeAt = window.innerHeight + window.pageYOffset
@@ -54,4 +55,56 @@ export function triggerEffectBoard(){
 		document.querySelector('.board__background--color').style.backgroundColor="rgba(14,29,28,1)"
 		document.querySelector('.board__background--img').style.transform="translate(-50%, -50%) scale(1.5)"
 	}
+}
+//Header Component on App
+export function changePositionOnScroll(){
+	const menu = document.querySelector('.menu')
+	const header = document.querySelector('.header')
+
+	const triggerEffectAt = header.offsetHeight + header.offsetTop 
+
+	if(triggerEffectAt<= window.pageYOffset){
+		menu.style.position="fixed"
+		menu.style.top="0"
+		menu.style.left="0"
+		menu.style.backgroundColor="white"
+		menu.style.width="100%"
+		menu.style.padding="1rem 2rem"
+		menu.style.margin="0"
+
+	}else{
+		menu.style.position="static"
+		menu.style.top="null"
+		menu.style.left="null"
+		menu.style.backgroundColor="none"
+		menu.style.width="90%"
+		menu.style.padding="initial"
+		menu.style.margin="2rem auto"
+	}
+}
+//Responsive Component on Landing
+export function moveImage(){
+	const responsiveBottomBoundry = (document.querySelector('.responsive').offsetHeight / 2) + document.querySelector('.responsive').offsetTop
+	const enterAt = window.innerHeight + window.pageYOffset
+	if(responsiveBottomBoundry<=enterAt){
+		document.querySelector('.responsive__devices--img').style.transform="translateX(0)"
+	}else{
+		document.querySelector('.responsive__devices--img').style.transform="translateX(100%)"
+	}
+}
+//Services Component on Landing
+export async function showServices(){
+	const services = document.querySelector('.services')
+	const servicesHalfView =  (services.offsetHeight / 2) + services.offsetTop;
+	const enterEffectAt = window.innerHeight + window.pageYOffset
+	if(enterEffectAt>=servicesHalfView){
+		await setTimeout(()=>document.querySelector('.services__web').style.opacity="1",100)
+		await setTimeout(()=>document.querySelector('.services__seo').style.opacity="1",300)
+		await setTimeout(()=>document.querySelector('.services__marketing').style.opacity="1",500)
+	}else{
+		document.querySelector('.services__web').style.opacity="0"
+		document.querySelector('.services__seo').style.opacity="0"
+		document.querySelector('.services__marketing').style.opacity="0"
+	}
+	
 }

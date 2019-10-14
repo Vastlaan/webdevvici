@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1c54a0b9.chunk.css",
+    "main.js": "/static/js/main.9219664a.chunk.js",
+    "main.js.map": "/static/js/main.9219664a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.9d4f7790.js",
+    "runtime-main.js.map": "/static/js/runtime-main.9d4f7790.js.map",
+    "static/js/2.416d75c6.chunk.js": "/static/js/2.416d75c6.chunk.js",
+    "static/js/2.416d75c6.chunk.js.map": "/static/js/2.416d75c6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.176cc50ce3117461af8afc5d64ef6d94.js": "/precache-manifest.176cc50ce3117461af8afc5d64ef6d94.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.1c54a0b9.chunk.css.map": "/static/css/main.1c54a0b9.chunk.css.map",
+    "static/media/board_background.png": "/static/media/board_background.6fb2d212.png",
+    "static/media/imperumLogo.c9e9f729.svg": "/static/media/imperumLogo.c9e9f729.svg",
+    "static/media/imperumLogoWhite.ef63f46f.svg": "/static/media/imperumLogoWhite.ef63f46f.svg",
+    "static/media/office.png": "/static/media/office.ffcf356b.png",
+    "static/media/resdes.png": "/static/media/resdes.145f1f8f.png",
+    "static/media/rockettest.16d1dafe.svg": "/static/media/rockettest.16d1dafe.svg"
+  }
+}

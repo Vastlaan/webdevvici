@@ -1,20 +1,10 @@
 import React, {useEffect} from 'react';
 import ResDes from '../img/resdes.png'
+import {moveImage} from '../functions'
 
 function Responsive(){
 
 	useEffect(()=>{
-
-		const moveImage = () =>{
-			const responsiveBottomBoundry = (document.querySelector('.responsive').offsetHeight / 2) + document.querySelector('.responsive').offsetTop
-			const enterAt = window.innerHeight + window.pageYOffset
-			if(responsiveBottomBoundry<=enterAt){
-				document.querySelector('.responsive__devices--img').style.transform="translateX(0)"
-			}else{
-				document.querySelector('.responsive__devices--img').style.transform="translateX(100%)"
-			}
-		}
-
 		window.addEventListener("scroll", moveImage);
 
 	    return () => {
