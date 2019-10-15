@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaFacebook, FaLinkedinIn, FaPhone, FaRegEnvelope, FaMapPin} from "react-icons/fa";
-import {ReactComponent as LogoWhite} from '../img/imperumLogoWhite.svg'
+import {ReactComponent as LogoWhite} from '../img/test.svg'
 
 function Footer(){
 

@@ -608,10 +608,12 @@ body {
       flex: 0 0 50%;
       display: flex;
       flex-direction: column;
-      padding: 2rem; }
+      padding: 0 2rem 2rem 2rem; }
       .footer__contact--data-logo > * {
         width: 20rem;
-        height: 20rem; }
+        height: 20rem;
+        margin-top: -2rem;
+        filter: contrast(200%); }
       .footer__contact--data-name {
         z-index: 9;
         font-family: "Rajdhani", sans-serif;
@@ -621,6 +623,9 @@ body {
         background-clip: text;
         color: #d4d7d0;
         text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1); }
+        @media only screen and (max-width: 26em) {
+          .footer__contact--data-name {
+            font-size: 8rem; } }
       .footer__contact--data-subname {
         z-index: 9;
         margin-bottom: 5rem;
@@ -630,6 +635,9 @@ body {
         font-size: 2.6rem;
         color: #d4d7d0;
         text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1); }
+        @media only screen and (max-width: 26em) {
+          .footer__contact--data-subname {
+            font-size: 4rem; } }
       .footer__contact--data-social {
         list-style: none;
         display: flex; }
@@ -643,6 +651,9 @@ body {
           .footer__contact--data-social li:hover {
             transform: scale(1.3);
             color: #46948f; }
+          @media only screen and (max-width: 26em) {
+            .footer__contact--data-social li {
+              font-size: 4rem; } }
       .footer__contact--data-phone {
         margin: 2rem 0 1rem 0;
         z-index: 9;
@@ -655,11 +666,17 @@ body {
         transition: all .3s; }
         .footer__contact--data-phone:hover {
           color: #FFFF4D; }
+        @media only screen and (max-width: 26em) {
+          .footer__contact--data-phone {
+            font-size: 2.8rem; } }
         .footer__contact--data-phone-i {
           font-size: 2.4rem;
           margin-right: 2rem;
           color: #6aa986;
           filter: contrast(150%); }
+          @media only screen and (max-width: 26em) {
+            .footer__contact--data-phone-i {
+              font-size: 2.5rem; } }
       .footer__contact--data-email {
         margin: 0 0 1rem 0;
         z-index: 9;
@@ -672,11 +689,17 @@ body {
         transition: all .3s; }
         .footer__contact--data-email:hover {
           color: #FFFF4D; }
+        @media only screen and (max-width: 26em) {
+          .footer__contact--data-email {
+            font-size: 2.8rem; } }
         .footer__contact--data-email-i {
           font-size: 2.4rem;
           margin-right: 2rem;
           color: #be9093;
           filter: contrast(150%); }
+          @media only screen and (max-width: 26em) {
+            .footer__contact--data-email-i {
+              font-size: 2.5rem; } }
       .footer__contact--data-address {
         list-style: none;
         z-index: 9; }
@@ -685,10 +708,16 @@ body {
           margin-right: 1rem;
           color: #7db4b0;
           filter: contrast(150%); }
+          @media only screen and (max-width: 26em) {
+            .footer__contact--data-address-i {
+              font-size: 2.5rem; } }
         .footer__contact--data-address li {
           font-family: "Poiret One", cursive;
           font-size: 2rem;
           color: white; }
+          @media only screen and (max-width: 26em) {
+            .footer__contact--data-address li {
+              font-size: 2.5rem; } }
         .footer__contact--data-address > *:not(:first-child) {
           margin-left: 4rem; }
     .footer__contact--form {
@@ -698,7 +727,8 @@ body {
       flex-direction: column; }
       @media only screen and (max-width: 26em) {
         .footer__contact--form {
-          margin-top: 5rem; } }
+          margin-top: 5rem;
+          width: 90%; } }
       .footer__contact--form-header {
         z-index: 9;
         font-family: "Orbitron", sans-serif;
