@@ -1,6 +1,17 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const db = require('./queries.js')
+
 
 const app = express()
+app.use(bodyParser.json())
+
+app.get('/getOffert', db.getOffert)
+
+app.post('/submitForm', db.submitForm)
+
+//temporary
+//app.get('/createTableAbout', db.createTableAbout)
 
 
 app.get('/test', (req, res)=>{

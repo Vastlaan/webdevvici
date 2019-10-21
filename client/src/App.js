@@ -9,6 +9,7 @@ import Footer from './Components/Footer'
 import About from './Components/About'
 import Offert from './Components/Offert'
 import Clients from './Components/Clients'
+import Manager from './Components/Manager'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         	<Route path="/about" exact={true} component={About} />
             <Route path="/offert" exact={true} component={Offert} />
             <Route path="/clients" exact={true} component={Clients} />
+            <Route path="/manager" exact={true} component={Manager} />
         </BrowserRouter>
         <Footer />
     </div>

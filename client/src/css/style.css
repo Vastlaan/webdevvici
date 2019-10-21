@@ -775,6 +775,34 @@ body {
         .footer__contact--form button:focus {
           outline: none; }
 
+.manager__section {
+  display: flex;
+  flex-direction: column; }
+  .manager__section h1 {
+    font-size: 3rem;
+    text-align: center; }
+  .manager__section--artikel {
+    background-color: #7db4b0;
+    margin: 5rem auto;
+    width: 100%;
+    padding: 2rem; }
+    .manager__section--artikel h3 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase; }
+    .manager__section--artikel p {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 2.5rem;
+      text-align: center;
+      letter-spacing: .2rem; }
+    .manager__section--artikel input {
+      width: 100%;
+      padding: 1rem 2rem;
+      text-align: center;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 2.5rem; }
+
 .about {
   overflow: hidden; }
   .about__mission {
@@ -956,6 +984,17 @@ body {
       animation-delay: .3s;
       transition: all 0.3s; }
 
+.offert__short {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rem 2rem 5rem 2rem; }
+  .offert__short--para {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2.8rem;
+    text-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+    text-transform: uppercase; }
+
 .offert__section {
   padding: 10rem 2rem; }
   .offert__section h1 {
@@ -1020,6 +1059,7 @@ body {
     display: grid;
     grid-template-columns: 35% 1fr;
     grid-gap: 2rem;
+    grid-row-gap: 5rem;
     font-family: "Poiret One", cursive;
     font-size: 2rem;
     letter-spacing: .2rem; }
@@ -1042,9 +1082,12 @@ body {
       font-weight: 700;
       height: 6rem;
       margin: auto 0; }
+      @media only screen and (max-width: 40.5em) {
+        .offert__section--description-left {
+          margin: 0; } }
       @media only screen and (max-width: 26em) {
         .offert__section--description-left {
-          height: 10rem;
+          height: 8rem;
           text-align: center; } }
     .offert__section--description-right {
       grid-column: 2/3;
