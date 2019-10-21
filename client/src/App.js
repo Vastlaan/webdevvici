@@ -10,9 +10,14 @@ import About from './Components/About'
 import Offert from './Components/Offert'
 import Clients from './Components/Clients'
 import Manager from './Components/Manager'
+import Confirmation from './Components/ConfirmationContactForm'
+import useGlobal from "./store";
 
 
 function App() {
+
+    const [globalState] = useGlobal()
+
   return (
     <div className="App">
     	<Header />
@@ -25,6 +30,7 @@ function App() {
             <Route path="/manager" exact={true} component={Manager} />
         </BrowserRouter>
         <Footer />
+        {globalState.displayContactFormConfirmation?<Confirmation message={"Succes"}/>:null}
     </div>
   );
 }

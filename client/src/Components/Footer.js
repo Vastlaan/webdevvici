@@ -1,8 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {FaFacebook, FaLinkedinIn, FaPhone, FaRegEnvelope, FaMapPin} from "react-icons/fa";
 import {ReactComponent as LogoWhite} from '../img/test.svg'
+import useGlobal from "../store";
 
 function Footer(){
+
+	const [dataToSend, setDataToSend] = useState({})
+	// const [confirmation, setConfirmationMessage]=useState(null)
+	const [ globalState, globalActions] = useGlobal()
+
+
+	const submitContactForm =() =>{
+		fetch('/submitContactForm', {
+			method:"POST",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body: JSON.stringify(dataToSend)
+		})
+		.then(res=>res.json())
+		.then(data=>{
+			console.log(data)
+			if(data==="Succes"||"Failed"){
+				//setConfirmationMessage(data)
+				globalActions.displayContactFormConfirmation()
+			}
+		})
+	}
 
 	return(
 		<div className='footer'>
@@ -32,11 +56,32 @@ function Footer(){
 				</div>
 				<div className='footer__contact--form'>
 					<h3 className='footer__contact--form-header'>Contact Ons</h3>
-					<input className='footer__contact--form-name' type='text' name='name' id='name' placeholder='Name'/>
-					<input className='footer__contact--form-email' type='email' name='email' id='email' placeholder='Email'/>
-					<input className='footer__contact--form-phone' type='phone' name='phone' id='phone' placeholder='Telefoon'/>
-					<textarea className='footer__contact--form-message' type='email' name='email' id='email' placeholder='Waar kunnen we u mee helpen?'></textarea>
-					<button className='footer__contact--form-btn'>Verzend</button>
+					<input className='footer__contact--form-name' type='text' name='name' id='name' placeholder='Name' onChange={(e)=>{
+						e.persist()
+						setDataToSend((prevState)=>({
+							...prevState, name: e.target.value
+						}))
+					}}/>
+					<input className='footer__contact--form-email' type='email' name='email' id='email' placeholder='Email' onChange={(e)=>{
+						e.persist()
+						setDataToSend((prevState)=>({
+							...prevState, email: e.target.value
+						}))
+					}}/>
+					<input className='footer__contact--form-phone' type='phone' name='phone' id='phone' placeholder='Telefoon' onChange={(e)=>{
+						e.persist()
+						setDataToSend((prevState)=>({
+							...prevState, phone: e.target.value
+						}))
+					}}/>
+					<textarea className='footer__contact--form-message' type='text' name='message' id='message' placeholder='Waar kunnen we u mee helpen?' onChange={(e)=>{
+						e.persist()
+						setDataToSend((prevState)=>({
+							...prevState, message: e.target.value
+						}))
+					}}>
+					</textarea>
+					<button className='footer__contact--form-btn' onClick={submitContactForm}>Verzend</button>
 				</div>
 			</div>
 		</div>

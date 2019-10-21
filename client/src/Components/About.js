@@ -8,7 +8,7 @@ function About(){
 
 	useEffect(()=>{
 
-		fetch('/getOffert').then(res=>res.json()).then(data=>{
+		fetch('/getAbout').then(res=>res.json()).then(data=>{
 			setData(data)
 		})
 

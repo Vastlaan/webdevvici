@@ -11,7 +11,7 @@ const pool = new Pool({
 	client_encoding: 'utf8'
 })
 
-const getOffert = (req,res)=>{
+const getAbout = (req,res)=>{
 	pool.query('SELECT * FROM about', (err,results)=>{
 		if(err){
 			throw new Error()
@@ -76,7 +76,7 @@ const submitForm = (req,res)=>{
 // }
 
 module.exports = {
-	getOffert,
+	getAbout,
 	submitForm,
 	// createTableAbout
 }

@@ -8,8 +8,10 @@ import Packages from './Packages'
 import Reviews from './Reviews'
 
 
+
 function Landing(){
 
+	
 	return(
 		<section className='landing'>
 			<Board />
@@ -17,7 +19,6 @@ function Landing(){
 			<Responsive />
 			<Packages />
 			<Reviews />
-			
 		</section>
 		)
 }

@@ -775,6 +775,15 @@ body {
         .footer__contact--form button:focus {
           outline: none; }
 
+.confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 199; }
+
 .manager__section {
   display: flex;
   flex-direction: column; }
