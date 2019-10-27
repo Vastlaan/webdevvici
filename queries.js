@@ -132,17 +132,13 @@ const createTable = async (req,res)=>{
 	query = query.join(' ')
 	console.log("query create table ===", query)
 	
-	const responseCreateTable = await pool.query(query)
-
-
-	pool.query(query, (err, result)=>{
-		if(err){
-				throw(err)
-			}
-			else{
-				res.status(200).json("Success")
-			}
-	})
+	// try{
+	// 	const responseCreateTable = await pool.query(query)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// }
+	
 
 	let queryInsert = ['INSERT INTO offert(']
 	const ks = Object.keys(backup.imperum.offert)
