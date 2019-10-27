@@ -10,11 +10,15 @@ const app = express()
 app.use(bodyParser.json())
 //responsible for retriving text for section About
 app.get('/getAbout', db.getAbout)
+//responsible for retriving text for section Offert
+app.get('/getOffert', db.getOffert)
+//responsible for retriving all tables from database
+app.get('/getAll', db.getAll)
 //responsible for submiting the text changes to database
 app.post('/submitForm', db.submitForm)
 
 //temporary
-//app.get('/createTableAbout', db.createTableAbout)
+app.get('/createTable', db.createTable)
 
 app.post('/submitContactForm', (req,res)=>{
 	console.log(req.body)
