@@ -94,75 +94,55 @@ const submitForm = (req,res)=>{
 	})
 
 	return res.status(200).json("Success")
-
-	// let query= ['UPDATE about SET']
-	// let set = []
-
-	// const values = Object.values(req.body)
-
-	//   Object.keys(req.body).forEach((key,i)=>{
-	//   		set.push(`${key} = $${i+1}`)
-
-	//   })
-	//   query.push(set.join(', '))
-	//   query = query.join(' ')
-	//   console.log(query, values)
-
-		// pool.query(query, values , (err,results)=>{
-		// 	if(err){
-		// 		throw(err)
-		// 	}
-		// 	else{
-		// 		res.status(200).json("Success")
-		// 	}
-		// })
 }
-
+//createTable method has to be hidden
 const createTable = async (req,res)=>{
 
-	let query = ['CREATE TABLE offert(']
-	const k = []
-	 const values = Object.values(backup.imperum.offert)
+	// let query = ['CREATE TABLE offert(']
+	// const k = []
+	//  const values = Object.values(backup.imperum.offert)
 
-	Object.keys(backup.imperum.offert).forEach((key,i)=>{
-		k.push(`${key} VARCHAR(1500)`)
-	})
-	query.push(k.join(", "))
-	query.push([')'])
-	query = query.join(' ')
-	console.log("query create table ===", query)
+	// Object.keys(backup.imperum.offert).forEach((key,i)=>{
+	// 	k.push(`${key} VARCHAR(1500)`)
+	// })
+	// query.push(k.join(", "))
+	// query.push([')'])
+	// query = query.join(' ')
+	// console.log("query create table ===", query)
 	
 	// try{
 	// 	const responseCreateTable = await pool.query(query)
 	// }
 	// catch(err){
 	// 	console.log(err)
+	// 	res.status(400).json('Ups, something went wrong')
 	// }
 	
 
-	let queryInsert = ['INSERT INTO offert(']
-	const ks = Object.keys(backup.imperum.offert)
-	queryInsert.push(ks.join(', '))
-	queryInsert.push([') VALUES('])
-	for(let i =0; i<Object.values(backup.imperum.offert).length;i++){
-		if(i+1===Object.values(backup.imperum.offert).length){
-			queryInsert.push([`$${i+1}`])
-		}else{
-			queryInsert.push([`$${i+1}, `])
-		}
+	// let queryInsert = ['INSERT INTO offert(']
+	// const ks = Object.keys(backup.imperum.offert)
+	// queryInsert.push(ks.join(', '))
+	// queryInsert.push([') VALUES('])
+	// for(let i =0; i<Object.values(backup.imperum.offert).length;i++){
+	// 	if(i+1===Object.values(backup.imperum.offert).length){
+	// 		queryInsert.push([`$${i+1}`])
+	// 	}else{
+	// 		queryInsert.push([`$${i+1}, `])
+	// 	}
 		
-	}
-	queryInsert.push(')')
-	queryInsert = queryInsert.join(' ')
-	console.log("query insert into table ===", queryInsert)
-	console.log("values ===", values)
+	// }
+	// queryInsert.push(')')
+	// queryInsert = queryInsert.join(' ')
+	// console.log("query insert into table ===", queryInsert)
+	// console.log("values ===", values)
 
-	try{
-		const responseInsertTable = await pool.query(queryInsert,values)
-	}
-	catch(err){
-		console.log(err)
-	}
+	// try{
+	// 	const responseInsertTable = await pool.query(queryInsert,values)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// 	res.status(400).json('Ups, something went wrong')
+	// }
 	
 
 	res.status(200).json("ok")

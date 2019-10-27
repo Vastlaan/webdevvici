@@ -4,10 +4,13 @@ const db = require('./queries.js')
 const keys = require('./config/keys')
 const nodemailer = require('nodemailer')
 const sgTransport = require('nodemailer-sendgrid-transport')
+const authRoutes = require('./authRoutes')
 
 
 const app = express()
 app.use(bodyParser.json())
+//responsible for logging the master user
+app.post('/api/login', authRoutes.login)
 //responsible for retriving text for section About
 app.get('/getAbout', db.getAbout)
 //responsible for retriving text for section Offert

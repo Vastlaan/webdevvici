@@ -51,7 +51,7 @@ function Manager(){
 						const sectionName = Object.keys(all)[i]
 
 						return(
-							<div className='manager__section'>
+							<div className='manager__section' key={`manager-section-${i}`}>
 									<h1>{sectionName} Section Fields</h1>
 									{
 										Object.keys(section).map((key,i)=>{
@@ -61,7 +61,7 @@ function Manager(){
 														<h3>Paragraph nr {i+1} current value:</h3>
 														<p>{section[key]}</p>
 														<h3>Paragraph {i+1} change To:</h3>
-														<input type='text' className='inputField' id={`${key}`} name={sectionName} />
+														<textarea type='text' className='inputField' id={`${key}`} name={sectionName}></textarea>
 													</div>
 												
 												)
