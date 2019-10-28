@@ -1,5 +1,6 @@
 const keys = require('./config/keys.js')
 const Pool = require('pg').Pool
+const bcrypt = require('bcrypt');
 
 //temporary
 const backup = require('./backup.js')
@@ -95,6 +96,33 @@ const submitForm = (req,res)=>{
 
 	return res.status(200).json("Success")
 }
+
+const validateUser = async (username,password)=>{
+
+	let isValid = false
+
+	try{
+		const users = await pool.query('SELECT * FROM users')
+		console.log(users)
+		users.rows.map(user=>{
+			if(user.name===username){
+				if(bcrypt.compareSync(password, user.hash)){
+					//valid user
+					isValid=true
+				}
+			}
+		})
+		
+	}
+	catch(err){
+		console.log(err)
+		return false
+	}
+
+	return isValid
+	
+}
+//==========================================BELOW METHODS HAS TO BE HIDDEN, THEY USE TO CREATE TABLES===========================================
 //createTable method has to be hidden
 const createTable = async (req,res)=>{
 
@@ -148,10 +176,38 @@ const createTable = async (req,res)=>{
 	res.status(200).json("ok")
 }
 
+const createUserInDatabase = async (req,res,data) =>{
+	
+	const queryCreate = ('CREATE TABLE users( name VARCHAR(100), hash VARCHAR(500) UNIQUE, id SERIAL PRIMARY KEY)')
+	const queryInsert = ('INSERT INTO users VALUES($1, $2)')
+	const values = Object.values(data)
+	console.log(queryCreate, queryInsert, values)
+
+	try{
+		const resultCreate = await pool.query(queryCreate)
+	}
+	catch(err){
+		console.log(err)
+		res.status(400).json('ups, something went wrong')
+	}
+
+	try{
+		const resultIsert = await pool.query(queryInsert, values)
+	}
+	catch(err){
+		console.log(err)
+		res.status(400).json('ups, something went wrong')
+	}
+
+	res.status(200).json("Ok")
+}
+
 module.exports = {
 	getAbout,
 	getOffert,
 	getAll,
 	submitForm,
-	createTable
+	validateUser,
+	createTable,
+	createUserInDatabase
 }

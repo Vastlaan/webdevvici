@@ -11,6 +11,8 @@ const app = express()
 app.use(bodyParser.json())
 //responsible for logging the master user
 app.post('/api/login', authRoutes.login)
+//TEMPORARY create user
+app.get('/createUser', authRoutes.createUser)
 //responsible for retriving text for section About
 app.get('/getAbout', db.getAbout)
 //responsible for retriving text for section Offert
@@ -20,7 +22,7 @@ app.get('/getAll', db.getAll)
 //responsible for submiting the text changes to database
 app.post('/submitForm', db.submitForm)
 
-//temporary
+//TEMPORARY
 app.get('/createTable', db.createTable)
 
 app.post('/submitContactForm', (req,res)=>{
