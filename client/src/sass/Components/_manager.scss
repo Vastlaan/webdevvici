@@ -1,5 +1,6 @@
 .manager{
-	
+
+	position:relative;
 
 	&__section{
 		
@@ -48,6 +49,33 @@
 					outline:none;
 					box-shadow: 0 0 1rem $color-tertiary;
 				}
+			}
+		}
+	}
+
+	&__scrollbar{
+		position:fixed;
+		bottom:0;
+		left:0;
+		width:100%;
+		max-height:3rem;
+		background-color: $color-tertiary-light;
+		box-shadow: 0 -.5rem 1rem rgba(0,0,0,.1);
+		display:flex;
+		flex-wrap: wrap;
+
+		&--section{
+			text-transform: uppercase;
+			display:flex;
+			align-items: center;
+			justify-content: center;
+			cursor:pointer;
+			transition:all .3s;
+			font-size: 2rem;
+			font-family: $font-rajdhani;
+
+			&:hover{
+				background-color: $color-tertiary;
 			}
 		}
 	}

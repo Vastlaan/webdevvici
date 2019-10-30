@@ -1156,41 +1156,64 @@ body {
       .login__form button:hover {
         background-color: #94464b; }
 
-.manager__section {
-  display: flex;
-  flex-direction: column;
-  background-color: #7db4b0;
-  margin: 5rem auto;
-  width: 90%; }
-  .manager__section h1 {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 3rem;
-    text-align: center; }
-  .manager__section--artikel {
-    margin: 5rem auto 0 auto;
-    width: 100%;
-    padding: 2rem; }
-    .manager__section--artikel h3 {
-      font-family: "Rajdhani", sans-serif;
-      font-size: 2rem;
+.manager {
+  position: relative; }
+  .manager__section {
+    display: flex;
+    flex-direction: column;
+    background-color: #7db4b0;
+    margin: 5rem auto;
+    width: 90%; }
+    .manager__section h1 {
+      font-family: "Orbitron", sans-serif;
       font-weight: 900;
-      text-transform: uppercase; }
-    .manager__section--artikel p {
-      font-family: "Rajdhani", sans-serif;
-      font-size: 2.5rem;
-      text-align: center;
-      letter-spacing: .2rem; }
-    .manager__section--artikel textarea {
+      text-transform: uppercase;
+      font-size: 3rem;
+      text-align: center; }
+    .manager__section--artikel {
+      margin: 5rem auto 0 auto;
       width: 100%;
-      padding: 1rem 2rem;
-      text-align: center;
-      font-family: "Rajdhani", sans-serif;
-      font-size: 2.5rem;
-      border: none;
-      background-color: #f6f9f9;
-      border-radius: 3px; }
-      .manager__section--artikel textarea:focus {
-        outline: none;
-        box-shadow: 0 0 1rem #94464b; }
+      padding: 2rem; }
+      .manager__section--artikel h3 {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 2rem;
+        font-weight: 900;
+        text-transform: uppercase; }
+      .manager__section--artikel p {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 2.5rem;
+        text-align: center;
+        letter-spacing: .2rem; }
+      .manager__section--artikel textarea {
+        width: 100%;
+        padding: 1rem 2rem;
+        text-align: center;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 2.5rem;
+        border: none;
+        background-color: #f6f9f9;
+        border-radius: 3px; }
+        .manager__section--artikel textarea:focus {
+          outline: none;
+          box-shadow: 0 0 1rem #94464b; }
+  .manager__scrollbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 3rem;
+    background-color: #be9093;
+    box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap; }
+    .manager__scrollbar--section {
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all .3s;
+      font-size: 2rem;
+      font-family: "Rajdhani", sans-serif; }
+      .manager__scrollbar--section:hover {
+        background-color: #94464b; }

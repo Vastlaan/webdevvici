@@ -41,6 +41,9 @@ function Manager(){
 		})
 	}
 
+	const amountOfSections = Object.keys(all).length
+	const percentageOfOneSection = 100 / amountOfSections
+
 	return(
 		<div className='manager'>
 			
@@ -51,7 +54,7 @@ function Manager(){
 						const sectionName = Object.keys(all)[i]
 
 						return(
-							<div className='manager__section' key={`manager-section-${i}`}>
+							<div className='manager__section' key={`manager-section-${i}`} id={sectionName}>
 									<h1>{sectionName} Section Fields</h1>
 									{
 										Object.keys(section).map((key,i)=>{
@@ -67,6 +70,20 @@ function Manager(){
 												)
 										})
 									}
+									<div className='manager__scrollbar'>
+									{
+										Object.keys(all).map((key,i)=>{
+											return(
+												<div className='manager__scrollbar--section' 
+													style={{width: `${percentageOfOneSection}%`}}
+													onClick={()=>document.querySelector(`#${key}`).scrollIntoView({behavior:"smooth"})}
+												>
+													{key}
+												</div>
+												)
+										})
+									}
+									</div>
 							</div>
 							)
 					})
