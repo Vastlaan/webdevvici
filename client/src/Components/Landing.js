@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 import Board from './Board'
@@ -11,14 +11,20 @@ import Reviews from './Reviews'
 
 function Landing(){
 
-	
+	const [landing, setLanding] = useState({})
+
+	useEffect(()=>{
+		fetch('/getLanding')
+		  .then(res=>res.json())
+		  .then(data => setLanding(data))
+	},[])
 	return(
 		<section className='landing'>
-			<Board />
-			<Services />
-			<Responsive />
-			<Packages />
-			<Reviews />
+			<Board landing={landing}/>
+			<Services landing={landing} />
+			<Responsive landing={landing} />
+			<Packages landing={landing} />
+			<Reviews landing={landing} />
 		</section>
 		)
 }

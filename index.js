@@ -14,6 +14,8 @@ app.post('/api/login', authRoutes.login)
 //TEMPORARY create user
 app.get('/createUser', authRoutes.createUser)
 //responsible for retriving text for section About
+app.get('/getLanding', db.getLanding)
+//responsible for retriving text for section About
 app.get('/getAbout', db.getAbout)
 //responsible for retriving text for section Offert
 app.get('/getOffert', db.getOffert)

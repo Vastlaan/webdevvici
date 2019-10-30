@@ -1,56 +1,56 @@
 import React from 'react';
 import { FaChevronCircleRight } from "react-icons/fa";
 
-function Packages(){
+function Packages({landing}){
 
 	return(
 		<div className='packages'>
-			<h1 className='packages__header'>Website pakkets & prijzen</h1>
+			<h1 className='packages__header'>{landing.packagesheader}</h1>
 			<div className='packages__offert'>
 				<div className='packages__offert--starter packages__offert--card'>
-					<h3 className='packages__offert--starter-header packages__offert--card-header'>Starter</h3>
+					<h3 className='packages__offert--starter-header packages__offert--card-header'>{landing.packagesstarterheader}</h3>
 					<div className='packages__offert--card-price'>
-						<h6><sup>&euro;</sup> 12 <sub>per maand</sub></h6>
+						<h6><sup>&euro;</sup> {landing.packagesstarterprice} <sub>{landing.packagesstarterpricesub}</sub></h6>
 					</div>
 					<ul className='packages__offert--card-list packages__offert--starter-list'>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> 1 jaar contract</li>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Domein naam</li>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Hosting</li>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> tot 3 Paginas</li>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Persoonlijk advies</li>
-						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> Voorwaarden</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist1}</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist2}</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist3}</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist4}</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist5}</li>
+						<li><FaChevronCircleRight className='packages__offert--starter-list-icon'/> {landing.packagesstarterlist6}</li>
 					</ul>
-					<a href='/offert#starter' className='packages__offert--card-btn packages__offert--starter-btn'>Select</a>
+					<a href='/offert#starter' className='packages__offert--card-btn packages__offert--starter-btn'>{landing.packagesstarterbutton}</a>
 				</div>
 				<div className='packages__offert--pro packages__offert--card'>
-					<h3 className='packages__offert--pro-header packages__offert--card-header'>Pro</h3>
+					<h3 className='packages__offert--pro-header packages__offert--card-header'>{landing.packagesproheader}</h3>
 					<div className='packages__offert--card-price'>
-						<h6><sup>&euro;</sup> 19 <sub>per maand</sub></h6>
+						<h6><sup>&euro;</sup> {landing.packagesproprice} <sub>{landing.packagespropricesub}</sub></h6>
 					</div>
 					<ul className='packages__offert--card-list packages__offert--pro-list'>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> 1 jaar contract</li>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> Domein naam</li>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> Hosting & Database</li>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> Contact Form</li>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> tot 5 Paginas</li>
-						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> Persoonlijk advies</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist1}</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist2}</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist3}</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist4}</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist5}</li>
+						<li><FaChevronCircleRight className='packages__offert--pro-list-icon'/> {landing.packagesprolist6}</li>
 					</ul>
-					<a href='/offert#pro' className='packages__offert--card-btn packages__offert--pro-btn'>Select</a>
+					<a href='/offert#pro' className='packages__offert--card-btn packages__offert--pro-btn'>{landing.packagesprobutton}</a>
 				</div>
 				<div className='packages__offert--advanced packages__offert--card'>
-					<h3 className='packages__offert--advanced-header packages__offert--card-header'>Advanced</h3>
+					<h3 className='packages__offert--advanced-header packages__offert--card-header'>{landing.packagesadvancedheader}</h3>
 					<div className='packages__offert--card-price'>
-						<h6><sup>&euro;</sup> 29 <sub>per maand</sub></h6>
+						<h6><sup>&euro;</sup> {landing.packagesadvancedprice} <sub>{landing.packagesadvancedpricesub}</sub></h6>
 					</div>
 					<ul className='packages__offert--card-list packages__offert--advanced-list'>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> 1 jaar contract</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Domein naam</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Hosting & Database</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> tot 10 paginas</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Eigen email</li>
-						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> Support</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist1}</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist2}</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist3}</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist4}</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist5}</li>
+						<li><FaChevronCircleRight className='packages__offert--advanced-list-icon'/> {landing.packagesadvancedlist6}</li>
 					</ul>
-					<a href='/offert#advanced' className='packages__offert--card-btn packages__offert--advanced-btn'>Select</a>
+					<a href='/offert#advanced' className='packages__offert--card-btn packages__offert--advanced-btn'>{landing.packagesadvancedbutton}</a>
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import Office from '../img/office.png'
 
-function Reviews(){
+function Reviews({landing}){
 
 	const [currentView, setCurrentView] = useState(1)
 
@@ -76,32 +76,26 @@ function Reviews(){
 			<div className='reviews__background'>
 				<img src={Office} alt='office' />
 			</div>
-			<h1 className='reviews__header'>Klantwaardering</h1>
+			<h1 className='reviews__header'>{landing.reviewsheader}</h1>
 			<div className='reviews__quotes'>
 				<div className='reviews__quotes--quote reviews__quotes--quote-1 '>
 					<p className='reviews__quotes--quote-left'><FaQuoteLeft/></p>
 					<p className='reviews__quotes--quote-text'>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.
+						{landing.reviewsquote1}
 					</p>
 					<p className='reviews__quotes--quote-right'><FaQuoteRight/></p>
 				</div>
 				<div className='reviews__quotes--quote reviews__quotes--quote-2 '>
 					<p className='reviews__quotes--quote-left'><FaQuoteLeft/></p>
 					<p className='reviews__quotes--quote-text'>
-						Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
+						{landing.reviewsquote2}
 					</p>
 					<p className='reviews__quotes--quote-right'><FaQuoteRight/></p>
 				</div>
 				<div className='reviews__quotes--quote reviews__quotes--quote-3 '>
 					<p className='reviews__quotes--quote-left'><FaQuoteLeft/></p>
 					<p className='reviews__quotes--quote-text'>
-						Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Tempor incididunt ut labore et dolore magna aliqua.
+						{landing.reviewsquote3}
 					</p>
 					<p className='reviews__quotes--quote-right'><FaQuoteRight/></p>
 				</div>

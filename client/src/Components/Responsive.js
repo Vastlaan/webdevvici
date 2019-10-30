@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import ResDes from '../img/resdes.png'
 import {moveImage} from '../functions'
 
-function Responsive(){
+function Responsive({landing}){
 
 	useEffect(()=>{
 		window.addEventListener("scroll", moveImage, { capture: false, passive: true});
@@ -14,11 +14,9 @@ function Responsive(){
 	return(
 		<div className='responsive'>
 			<div className='responsive__description'>
-				<h1 className='responsive__description--header'>Responsive Design</h1>
+				<h1 className='responsive__description--header'>{landing.responsiveheader}</h1>
 				<p className='responsive__description--para'>
-					In de wereld bestaan meer dan 35 milijard apparaten die met Internet kunnen verbinden. 
-					Laptops, PC's, tablets, mobieltjes - bijna idereen maakt dagelijks gebruik van een van die apparaten.
-					Daarom is het heel belangrijk dat jouw website goed eruitziet op verschillende schermresoluties.
+					{landing.responsivepara}
 				</p>
 			</div>
 			<div className='responsive__devices'>

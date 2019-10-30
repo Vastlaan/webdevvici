@@ -14,6 +14,19 @@ const pool = new Pool({
 	client_encoding: 'utf8'
 })
 
+const getLanding = (req,res)=>{
+	pool.query('SELECT * FROM landing', (err,results)=>{
+		if(err){
+			throw new Error(err)
+			res.status(400).json('ups, something went wrong')
+		}
+		if(results.rows){
+			const rows = results.rows.reduce((obj,row)=>Object.assign(obj,row),{})
+			res.status(200).json(rows)
+		}
+	})
+}
+
 const getAbout = async (req,res)=>{
 
 	pool.query('SELECT * FROM about', (err,results)=>{
@@ -126,51 +139,51 @@ const validateUser = async (username,password)=>{
 //createTable method has to be hidden
 const createTable = async (req,res)=>{
 
-	let query = ['CREATE TABLE landing(']
-	const k = []
-	 const values = Object.values(backup.imperum.landing)
+	// let query = ['CREATE TABLE landing(']
+	// const k = []
+	//  const values = Object.values(backup.imperum.landing)
 
-	Object.keys(backup.imperum.landing).forEach((key,i)=>{
-		k.push(`${key} VARCHAR(1500)`)
-	})
-	query.push(k.join(", "))
-	query.push([')'])
-	query = query.join(' ')
-	console.log("query create table ===", query)
+	// Object.keys(backup.imperum.landing).forEach((key,i)=>{
+	// 	k.push(`${key} VARCHAR(1500)`)
+	// })
+	// query.push(k.join(", "))
+	// query.push([')'])
+	// query = query.join(' ')
+	// console.log("query create table ===", query)
 	
-	try{
-		const responseCreateTable = await pool.query(query)
-	}
-	catch(err){
-		console.log(err)
-		res.status(400).json('Ups, something went wrong')
-	}
+	// try{
+	// 	const responseCreateTable = await pool.query(query)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// 	res.status(400).json('Ups, something went wrong')
+	// }
 	
 
-	let queryInsert = ['INSERT INTO landing(']
-	const ks = Object.keys(backup.imperum.landing)
-	queryInsert.push(ks.join(', '))
-	queryInsert.push([') VALUES('])
-	for(let i =0; i<Object.values(backup.imperum.landing).length;i++){
-		if(i+1===Object.values(backup.imperum.landing).length){
-			queryInsert.push([`$${i+1}`])
-		}else{
-			queryInsert.push([`$${i+1}, `])
-		}
+	// let queryInsert = ['INSERT INTO landing(']
+	// const ks = Object.keys(backup.imperum.landing)
+	// queryInsert.push(ks.join(', '))
+	// queryInsert.push([') VALUES('])
+	// for(let i =0; i<Object.values(backup.imperum.landing).length;i++){
+	// 	if(i+1===Object.values(backup.imperum.landing).length){
+	// 		queryInsert.push([`$${i+1}`])
+	// 	}else{
+	// 		queryInsert.push([`$${i+1}, `])
+	// 	}
 		
-	}
-	queryInsert.push(')')
-	queryInsert = queryInsert.join(' ')
-	console.log("query insert into table ===", queryInsert)
-	console.log("values ===", values)
+	// }
+	// queryInsert.push(')')
+	// queryInsert = queryInsert.join(' ')
+	// console.log("query insert into table ===", queryInsert)
+	// console.log("values ===", values)
 
-	try{
-		const responseInsertTable = await pool.query(queryInsert,values)
-	}
-	catch(err){
-		console.log(err)
-		res.status(400).json('Ups, something went wrong')
-	}
+	// try{
+	// 	const responseInsertTable = await pool.query(queryInsert,values)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// 	res.status(400).json('Ups, something went wrong')
+	// }
 	
 
 	res.status(200).json("ok")
@@ -203,6 +216,7 @@ const createUserInDatabase = async (req,res,data) =>{
 }
 
 module.exports = {
+	getLanding,
 	getAbout,
 	getOffert,
 	getAll,

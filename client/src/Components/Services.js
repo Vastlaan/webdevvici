@@ -3,7 +3,7 @@ import { MdDevices } from "react-icons/md";
 import { FaSearchengin, FaGlobe } from "react-icons/fa";
 import {showServices} from '../functions'
 
-function Services() {
+function Services({landing}) {
 
 	useEffect(()=>{
 		
@@ -17,40 +17,31 @@ function Services() {
 				<div className='services__section--icon'>
 					<MdDevices className='services__section--icon-i' />
 				</div>
-				<h1 className='services__section--header'>Web Design</h1>
+				<h1 className='services__section--header'>{landing.servicesheader1}</h1>
 				<p className='services__section--para'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
+					{landing.servicespara1}
 				</p>
-				<a className='services__section--btn' href="/">Meer</a>
+				<a className='services__section--btn' href="/">{landing.servicesbutton1}</a>
 			</div>
 			<div className='services__seo services__section'>
 				<div className='services__section--icon'>
 					<FaSearchengin className='services__section--icon-i' />
 				</div>
-				<h1 className='services__section--header'>Seo</h1>
+				<h1 className='services__section--header'>{landing.servicesheader2}</h1>
 				<p className='services__section--para'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.		
+					{landing.servicespara2}		
 				</p>
-				<a className='services__section--btn' href="/">Meer</a>
+				<a className='services__section--btn' href="/">{landing.servicesbutton2}</a>
 			</div>
 			<div className='services__marketing services__section'>
 				<div className='services__section--icon'>
 					<FaGlobe className='services__section--icon-i' />
 				</div>
-				<h1 className='services__section--header'>Online Marketing</h1>
+				<h1 className='services__section--header'>{landing.servicesheader3}</h1>
 				<p className='services__section--para'>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
+					{landing.servicespara3}
 				</p>
-				<a className='services__section--btn' href="/">Meer</a>
+				<a className='services__section--btn' href="/">{landing.servicesbutton3}</a>
 			</div>
 		</div>
 		)
