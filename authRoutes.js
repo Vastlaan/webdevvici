@@ -1,10 +1,10 @@
 const bcrypt = require('bcrypt');
 const db = require('./queries')
 //to delete
-const user = {
-	name: 'ml.antczak@gmail.com',
-	password: 'psychedryna66'
-}
+// const user = {
+// 	name: 'ml.antczak@gmail.com',
+// 	password: 'psychedryna66'
+// }
 
 const login =async (req,res) =>{
 

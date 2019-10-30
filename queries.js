@@ -50,10 +50,10 @@ const getAll = async (req,res)=>{
 
 	const arr = await pool.query(" select table_name from information_schema.tables where table_schema='public';")
 	
-    const namesArr = arr.rows.map(each=>{
-    	return each.table_name
+    let namesArr = arr.rows.filter(each=>{
+		return each.table_name !== 'users'	 	
     })
-    //console.log(namesArr.length)
+    namesArr = namesArr.map(each=>each.table_name)
 
     let final = {}
     for(let i=0; i<namesArr.length; i++){ 	
@@ -103,7 +103,7 @@ const validateUser = async (username,password)=>{
 
 	try{
 		const users = await pool.query('SELECT * FROM users')
-		console.log(users)
+		// console.log(users)
 		users.rows.map(user=>{
 			if(user.name===username){
 				if(bcrypt.compareSync(password, user.hash)){
@@ -122,55 +122,55 @@ const validateUser = async (username,password)=>{
 	return isValid
 	
 }
-//==========================================BELOW METHODS HAS TO BE HIDDEN, THEY USE TO CREATE TABLES===========================================
+//==========================================BELOW METHODS HAS TO BE HIDDEN, THEY ARE USED TO CREATE TABLES===========================================
 //createTable method has to be hidden
 const createTable = async (req,res)=>{
 
-	// let query = ['CREATE TABLE offert(']
-	// const k = []
-	//  const values = Object.values(backup.imperum.offert)
+	let query = ['CREATE TABLE landing(']
+	const k = []
+	 const values = Object.values(backup.imperum.landing)
 
-	// Object.keys(backup.imperum.offert).forEach((key,i)=>{
-	// 	k.push(`${key} VARCHAR(1500)`)
-	// })
-	// query.push(k.join(", "))
-	// query.push([')'])
-	// query = query.join(' ')
-	// console.log("query create table ===", query)
+	Object.keys(backup.imperum.landing).forEach((key,i)=>{
+		k.push(`${key} VARCHAR(1500)`)
+	})
+	query.push(k.join(", "))
+	query.push([')'])
+	query = query.join(' ')
+	console.log("query create table ===", query)
 	
-	// try{
-	// 	const responseCreateTable = await pool.query(query)
-	// }
-	// catch(err){
-	// 	console.log(err)
-	// 	res.status(400).json('Ups, something went wrong')
-	// }
+	try{
+		const responseCreateTable = await pool.query(query)
+	}
+	catch(err){
+		console.log(err)
+		res.status(400).json('Ups, something went wrong')
+	}
 	
 
-	// let queryInsert = ['INSERT INTO offert(']
-	// const ks = Object.keys(backup.imperum.offert)
-	// queryInsert.push(ks.join(', '))
-	// queryInsert.push([') VALUES('])
-	// for(let i =0; i<Object.values(backup.imperum.offert).length;i++){
-	// 	if(i+1===Object.values(backup.imperum.offert).length){
-	// 		queryInsert.push([`$${i+1}`])
-	// 	}else{
-	// 		queryInsert.push([`$${i+1}, `])
-	// 	}
+	let queryInsert = ['INSERT INTO landing(']
+	const ks = Object.keys(backup.imperum.landing)
+	queryInsert.push(ks.join(', '))
+	queryInsert.push([') VALUES('])
+	for(let i =0; i<Object.values(backup.imperum.landing).length;i++){
+		if(i+1===Object.values(backup.imperum.landing).length){
+			queryInsert.push([`$${i+1}`])
+		}else{
+			queryInsert.push([`$${i+1}, `])
+		}
 		
-	// }
-	// queryInsert.push(')')
-	// queryInsert = queryInsert.join(' ')
-	// console.log("query insert into table ===", queryInsert)
-	// console.log("values ===", values)
+	}
+	queryInsert.push(')')
+	queryInsert = queryInsert.join(' ')
+	console.log("query insert into table ===", queryInsert)
+	console.log("values ===", values)
 
-	// try{
-	// 	const responseInsertTable = await pool.query(queryInsert,values)
-	// }
-	// catch(err){
-	// 	console.log(err)
-	// 	res.status(400).json('Ups, something went wrong')
-	// }
+	try{
+		const responseInsertTable = await pool.query(queryInsert,values)
+	}
+	catch(err){
+		console.log(err)
+		res.status(400).json('Ups, something went wrong')
+	}
 	
 
 	res.status(200).json("ok")
@@ -178,26 +178,26 @@ const createTable = async (req,res)=>{
 
 const createUserInDatabase = async (req,res,data) =>{
 	
-	const queryCreate = ('CREATE TABLE users( name VARCHAR(100), hash VARCHAR(500) UNIQUE, id SERIAL PRIMARY KEY)')
-	const queryInsert = ('INSERT INTO users VALUES($1, $2)')
-	const values = Object.values(data)
-	console.log(queryCreate, queryInsert, values)
+	// const queryCreate = ('CREATE TABLE users( name VARCHAR(100), hash VARCHAR(500) UNIQUE, id SERIAL PRIMARY KEY)')
+	// const queryInsert = ('INSERT INTO users VALUES($1, $2)')
+	// const values = Object.values(data)
+	// console.log(queryCreate, queryInsert, values)
 
-	try{
-		const resultCreate = await pool.query(queryCreate)
-	}
-	catch(err){
-		console.log(err)
-		res.status(400).json('ups, something went wrong')
-	}
+	// try{
+	// 	const resultCreate = await pool.query(queryCreate)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// 	res.status(400).json('ups, something went wrong')
+	// }
 
-	try{
-		const resultIsert = await pool.query(queryInsert, values)
-	}
-	catch(err){
-		console.log(err)
-		res.status(400).json('ups, something went wrong')
-	}
+	// try{
+	// 	const resultIsert = await pool.query(queryInsert, values)
+	// }
+	// catch(err){
+	// 	console.log(err)
+	// 	res.status(400).json('ups, something went wrong')
+	// }
 
 	res.status(200).json("Ok")
 }
