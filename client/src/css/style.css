@@ -1161,7 +1161,6 @@ body {
   .manager__section {
     display: flex;
     flex-direction: column;
-    background-color: #7db4b0;
     margin: 5rem auto;
     width: 90%; }
     .manager__section h1 {
@@ -1216,4 +1215,24 @@ body {
       font-size: 2rem;
       font-family: "Rajdhani", sans-serif; }
       .manager__scrollbar--section:hover {
-        background-color: #94464b; }
+        transform: scale(1.1); }
+  .manager__button {
+    display: block;
+    width: 25%;
+    padding: 2rem 0;
+    text-align: center;
+    margin: 5rem auto;
+    border: none;
+    border-radius: 3px;
+    background-color: #2a5855;
+    color: white;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transition: all .3s;
+    cursor: pointer;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .2rem; }
+    .manager__button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1); }

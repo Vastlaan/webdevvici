@@ -43,6 +43,7 @@ function Manager(){
 
 	const amountOfSections = Object.keys(all).length
 	const percentageOfOneSection = 100 / amountOfSections
+	const colors = ["#6aa986","#be9093","#7db4b0","#b5d4d2","#6aa986","#be9093","#6aa986","#be9093","#7db4b0","#b5d4d2","#6aa986","#be9093"]
 
 	return(
 		<div className='manager'>
@@ -54,7 +55,7 @@ function Manager(){
 						const sectionName = Object.keys(all)[i]
 
 						return(
-							<div className='manager__section' key={`manager-section-${i}`} id={sectionName}>
+							<div className='manager__section' key={`manager-section-${i}`} id={sectionName} style={{backgroundColor:colors[i]}}>
 									<h1>{sectionName} Section Fields</h1>
 									{
 										Object.keys(section).map((key,i)=>{
@@ -75,7 +76,8 @@ function Manager(){
 										Object.keys(all).map((key,i)=>{
 											return(
 												<div className='manager__scrollbar--section' 
-													style={{width: `${percentageOfOneSection}%`}}
+													key={`scrollbar-${i}`}
+													style={{width: `${percentageOfOneSection}%`, backgroundColor:colors[i]}}
 													onClick={()=>document.querySelector(`#${key}`).scrollIntoView({behavior:"smooth"})}
 												>
 													{key}

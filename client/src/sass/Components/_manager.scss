@@ -6,7 +6,7 @@
 		
 		display: flex;
 		flex-direction: column;
-		background-color: $color-primary-light;
+		//background-color: $randomColor;
 		margin:5rem auto;
 		width:90%;
 
@@ -75,8 +75,32 @@
 			font-family: $font-rajdhani;
 
 			&:hover{
-				background-color: $color-tertiary;
+				transform:scale(1.1);
 			}
+		}
+	}
+
+	&__button{
+		display:block;
+		width:25%;
+		padding:2rem 0;
+		text-align:center;
+		margin:5rem auto;
+		border:none;
+		border-radius: 3px;
+		background-color: $color-primary-dark;
+		color:white;
+		box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+		transition:all .3s;
+		cursor:pointer;
+		font-family: $font-rajdhani;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: .2rem;
+
+		&:hover{
+			transform:translateY(-3px);
+			box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
 		}
 	}
 }
