@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { IoMdLogOut } from "react-icons/io";
 
 function Manager(){
 
@@ -28,8 +29,6 @@ function Manager(){
 			}
 
 		})
-		//console.log(dataToSubmit)
-
 
 		fetch('/submitForm',{
 			method:"POST",
@@ -39,6 +38,17 @@ function Manager(){
 			},
 			body: JSON.stringify(dataToSubmit)
 		})
+	}
+
+	const scrollInto = (key)=>{
+
+		const section = document.querySelector(`#${key}`)
+		//calc adjust position of section (-90px, thats a height of fixed navbar above)
+		const adjustPosition = window.pageYOffset + section.getBoundingClientRect().top - 50
+		console.log(adjustPosition, key)
+		return window.scrollTo(0, adjustPosition)
+
+		//document.querySelector(`#${key}`).scrollIntoView({behavior:"smooth"})
 	}
 
 	const amountOfSections = Object.keys(all).length
@@ -78,13 +88,23 @@ function Manager(){
 												<div className='manager__scrollbar--section' 
 													key={`scrollbar-${i}`}
 													style={{width: `${percentageOfOneSection}%`, backgroundColor:colors[i]}}
-													onClick={()=>document.querySelector(`#${key}`).scrollIntoView({behavior:"smooth"})}
+													onClick={()=>scrollInto(key)}
 												>
 													{key}
 												</div>
 												)
 										})
 									}
+									</div>
+									<div 
+										className='manager__logout'
+										onClick={()=>{
+											localStorage.removeItem('token')
+											window.location.reload()
+										}}
+									>	
+										<IoMdLogOut className='manager__logout--icon'/>
+										<span className='manager__logout--text'>Log uit</span>
 									</div>
 							</div>
 							)

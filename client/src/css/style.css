@@ -39,7 +39,13 @@
     stroke-dashoffset: 70; } }
 
 ::-webkit-scrollbar {
-  display: none; }
+  width: 7.5px;
+  background-color: #7db4b0; }
+  ::-webkit-scrollbar-thumb {
+    background-color: #2a5855; }
+  @media only screen and (max-width: 48.5em) {
+    ::-webkit-scrollbar {
+      display: none; } }
 
 *,
 *::after,
@@ -47,7 +53,12 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  scrollbar-width: none; }
+  scrollbar-width: thin; }
+  @media only screen and (max-width: 48.5em) {
+    *,
+    *::after,
+    *::before {
+      scrollbar-width: none; } }
 
 html {
   box-sizing: border-box;
@@ -70,7 +81,10 @@ html {
       font-size: 100%; } }
 
 body {
-  width: 100vw; }
+  width: calc(100vw - 7.5px); }
+  @media only screen and (max-width: 48.5em) {
+    body {
+      width: 100vw; } }
 
 .App {
   display: flex;
@@ -1213,9 +1227,10 @@ body {
       cursor: pointer;
       transition: all .3s;
       font-size: 2rem;
-      font-family: "Rajdhani", sans-serif; }
+      font-family: "Rajdhani", sans-serif;
+      border: 1px solid transparent; }
       .manager__scrollbar--section:hover {
-        transform: scale(1.1); }
+        transform: scale(1.05); }
   .manager__button {
     display: block;
     width: 25%;
@@ -1236,3 +1251,28 @@ body {
     .manager__button:hover {
       transform: translateY(-3px);
       box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1); }
+  .manager__logout {
+    position: fixed;
+    top: 6.5rem;
+    right: -1rem;
+    padding: 0;
+    height: 10rem;
+    border-radius: 5px;
+    background-color: #94464b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all .3s; }
+    .manager__logout:hover {
+      right: 0; }
+    .manager__logout--icon {
+      font-size: 2rem;
+      transform: rotate(-90deg) translateX(2rem); }
+    .manager__logout--text {
+      font-family: "Rajdhani", sans-serif;
+      font-size: 1.6rem;
+      display: block;
+      transform: rotate(-90deg); }

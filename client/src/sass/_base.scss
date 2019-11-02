@@ -1,5 +1,14 @@
 ::-webkit-scrollbar{
-	display:none;
+	width:7.5px;
+	background-color: $color-primary-light;
+
+	&-thumb{
+		background-color: $color-primary-dark;
+	}
+
+	@include respond(m){
+		display:none;
+	}
 }
 
 *,
@@ -8,7 +17,11 @@
 	margin:0;
 	padding:0;
 	box-sizing: inherit;
-	scrollbar-width:none;
+	scrollbar-width:thin;
+
+	@include respond(m){
+		scrollbar-width:none;
+	}
 }
 
 html{
@@ -33,7 +46,10 @@ html{
 	}
 }
 body{
-	width:100vw;
+	width:calc(100vw - 7.5px);
+	@include respond(m){
+		width:100vw;
+	}
 
 }
 .App{

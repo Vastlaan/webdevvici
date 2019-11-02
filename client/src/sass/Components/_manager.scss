@@ -73,9 +73,10 @@
 			transition:all .3s;
 			font-size: 2rem;
 			font-family: $font-rajdhani;
+			border:1px solid transparent;
 
 			&:hover{
-				transform:scale(1.1);
+				transform:scale(1.05);
 			}
 		}
 	}
@@ -101,6 +102,38 @@
 		&:hover{
 			transform:translateY(-3px);
 			box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+		}
+	}
+	&__logout{
+		position:fixed;
+		top:6.5rem;
+		right:-1rem;
+		padding:0;
+		height:10rem;
+		border-radius: 5px;
+		background-color: $color-tertiary;
+		color:white;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		cursor:pointer;		
+		transition:all .3s;
+
+		&:hover{
+			right:0;
+		}
+
+		&--icon{
+			font-size: 2rem;
+			transform: rotate(-90deg) translateX(2rem);
+
+		}
+		&--text{
+			font-family: $font-rajdhani;
+			font-size: 1.6rem;
+			display:block;
+			transform: rotate(-90deg);
 		}
 	}
 }

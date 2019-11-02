@@ -4,5 +4,6 @@ module.exports = {
 	DATABASE_SECRET: process.env.DATABASE_SECRET,
 	DATABASE_NAME: process.env.DATABASE_NAME,
 	DATABASE_PORT: process.env.DATABASE_PORT,
-	SENDGRID_API_KEY: process.env.SENDGRID_API_KEY
+	SENDGRID_API_KEY: process.env.SENDGRID_API_KEY,
+	JWT_SECRET:process.env.JWT_SECRET
 }

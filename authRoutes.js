@@ -1,18 +1,15 @@
 const bcrypt = require('bcrypt');
 const db = require('./queries');
 const jwt = require('jsonwebtoken');
-//to delete
-// const user = {
-// 	name: 'ml.antczak@gmail.com',
-// 	password: 'psychedryna66'
-// }
+const keys = require('./config/keys')
+
 
 const login =async (req,res) =>{
 
 	//check if user alreaddy logged in
 	if(req.body.token){
 		//console.log(req.body.token)
-		const username = jwt.verify(req.body.token, "mysecretkey")
+		const username = jwt.verify(req.body.token, keys.JWT_SECRET)
 		if(username){
 			return res.status(200).json({message:true})
 		}else{
@@ -25,7 +22,7 @@ const login =async (req,res) =>{
 	const validUser = await db.validateUser(username,password)
 	//if valid create token and allow change status of logged at frontend state to true
 	if(validUser){
-		const token = jwt.sign({username}, "mysecretkey", {expiresIn:"12h"})
+		const token = jwt.sign({username}, keys.JWT_SECRET, {expiresIn:"12h"})
 		return res.status(200).json({
 			message: true,
 			token
