@@ -1,9 +1,14 @@
 import React, {useEffect, useState} from 'react'
+import useGlobal from '../store'
 import { IoMdLogOut } from "react-icons/io";
+import Alert from './Alert'
 
 function Manager(){
 
+	const[globalState, globalActions] = useGlobal()
+
 	const [all, setAll] = useState({})
+	const [send, setSend] = useState(false)
 
 	useEffect(()=>{
 		fetch('/getAll').then(res=>res.json()).then(data=>{
@@ -11,33 +16,47 @@ function Manager(){
 		})
 	},[])
 
-	const submitForm = () =>{
+	useEffect(()=>{
+		if(globalState.sendManagerForm){
+			const arrayOfInputFields = document.querySelectorAll('.inputField')
+			//console.log(arrayOfInputFields)
+			let dataToSubmit = {}
+			arrayOfInputFields.forEach((field,i)=>{
+				//console.log(field.name, field.value, field.id)
+
+				if(!dataToSubmit[field.name]){
+					dataToSubmit[field.name]={[field.id]: field.value || all[field.name][field.id]}
+				}else{
+					Object.assign(dataToSubmit[field.name], {[field.id]: field.value || all[field.name][field.id]})
+				}
+
+			})
+
+			fetch('/submitForm',{
+				method:"POST",
+				credentials:"include",
+				headers:{
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(dataToSubmit)
+			}).then(res=>res.json())
+			  .then(data=>{
+			  	if(data==="Success"){
+			  		globalActions.setAlertComplete()
+			  	}
+			  })
+			  .catch(err=>console.log(err))
+		}else{
+			//console.log('sendData is false')
+			return
+		}			
+	},[globalState.sendManagerForm])
+
+	const submitForm =() =>{
 		if(all==={}){
 			return null
 		}
-
-		const arrayOfInputFields = document.querySelectorAll('.inputField')
-		//console.log(arrayOfInputFields)
-		let dataToSubmit = {}
-		arrayOfInputFields.forEach((field,i)=>{
-			//console.log(field.name, field.value, field.id)
-
-			if(!dataToSubmit[field.name]){
-				dataToSubmit[field.name]={[field.id]: field.value || all[field.name][field.id]}
-			}else{
-				Object.assign(dataToSubmit[field.name], {[field.id]: field.value || all[field.name][field.id]})
-			}
-
-		})
-
-		fetch('/submitForm',{
-			method:"POST",
-			credentials:"include",
-			headers:{
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(dataToSubmit)
-		})
+		globalActions.displayAlert() 
 	}
 
 	const scrollInto = (key)=>{
@@ -113,6 +132,9 @@ function Manager(){
 				}
 			
 			<button className='manager__button' onClick={()=>submitForm()}>Submit</button>
+			{
+				globalState.displayAlert?<Alert/>:null
+			}
 		</div>
 		)
 }

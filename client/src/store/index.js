@@ -4,7 +4,10 @@ import useGlobalHook from "use-global-hook";
 import * as actions from "../actions";
 
 const initialState = {
-  displayContactFormConfirmation:false
+  displayContactFormConfirmation:false,
+  displayAlert:false,
+  sendManagerForm:false,
+  setAlertMessage:"Before"
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

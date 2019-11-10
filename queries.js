@@ -81,11 +81,11 @@ const getAll = async (req,res)=>{
 }
 
 const submitForm = (req,res)=>{
-	console.log(req.body)
+	
 
 	Object.values(req.body).map((section,i)=>{
 		const sectionName = Object.keys(req.body)[i]
-		console.log(sectionName, req.body[sectionName])
+		//console.log(sectionName, req.body[sectionName])
 		let query = [`UPDATE ${sectionName} SET`]
 		let set = []
 		const values = Object.values(req.body[sectionName])
@@ -96,13 +96,13 @@ const submitForm = (req,res)=>{
 
 		query.push(set.join(', '))
 		query = query.join(' ')
-		console.log(query, values)
+
 		pool.query(query, values , (err,results)=>{
 			if(err){
 				throw(err)
 			}
 			else{
-				console.log("Succes")
+				console.log('Success')
 			}
 		})
 	})

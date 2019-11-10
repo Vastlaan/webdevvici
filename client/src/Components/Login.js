@@ -30,7 +30,7 @@ function Login(){
 
 			}
 		}
-	},[])
+	},[logged])
 
 	const handleSubmit = (event) =>{
 		event.preventDefault()
