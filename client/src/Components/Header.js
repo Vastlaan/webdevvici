@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdAccessTime, MdPhone, MdMailOutline } from "react-icons/md";
-import {ReactComponent as Logo} from '../img/imperumLogoNew3.svg'
+import {ReactComponent as Logo} from '../img/imperumLogoCatch.svg'
 
 function Header(){
 

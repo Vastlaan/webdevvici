@@ -398,6 +398,7 @@ body {
   .responsive__devices {
     flex: 0 0 50%;
     overflow-y: hidden;
+    overflow-x: hidden;
     padding: 2rem; }
     .responsive__devices--img {
       display: block;
