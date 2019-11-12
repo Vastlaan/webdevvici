@@ -39,7 +39,7 @@ function Footer(){
 						Imperum
 					</h1>
 					<h3 className='footer__contact--data-subname'>
-						Web design
+						Future of Web Desing
 					</h3>
 					<ul className='footer__contact--data-social'>
 						<li><FaFacebook /></li>

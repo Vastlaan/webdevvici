@@ -13,7 +13,7 @@ function Header(){
 				<Logo className='header__logo--logo'/>
 				<div className='header__logo--name'>
 					<h1 className='header__logo--main'>Imperum</h1>
-					<h3 className='header__logo--sub'>Web Design</h3>
+					<h3 className='header__logo--sub'>Future of Web Desing</h3>
 				</div>
 				
 			</div>
