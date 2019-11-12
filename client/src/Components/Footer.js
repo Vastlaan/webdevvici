@@ -11,6 +11,9 @@ function Footer(){
 
 
 	const submitContactForm =() =>{
+		if(!dataToSend.email || !dataToSend.message){
+			return alert('Please fill in the contact form before sending')
+		}
 		fetch('/submitContactForm', {
 			method:"POST",
 			headers:{
