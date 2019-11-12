@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {FaFacebook, FaLinkedinIn, FaPhone, FaRegEnvelope, FaMapPin} from "react-icons/fa";
-import {ReactComponent as LogoWhite} from '../img/test.svg'
+import {ReactComponent as LogoWhite} from '../img/imperumLogoCatchWhite.svg'
 import useGlobal from "../store";
 
 function Footer(){
@@ -39,7 +39,7 @@ function Footer(){
 						Imperum
 					</h1>
 					<h3 className='footer__contact--data-subname'>
-						IT professionals
+						Web design
 					</h3>
 					<ul className='footer__contact--data-social'>
 						<li><FaFacebook /></li>

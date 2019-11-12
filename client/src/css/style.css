@@ -213,7 +213,7 @@ body {
 
 .menu {
   width: 90%;
-  margin: 2rem auto;
+  margin: 1rem auto;
   border-top: 1px solid rgba(190, 144, 147, 0.6);
   border-bottom: 1px solid rgba(190, 144, 147, 0.6);
   display: flex;
@@ -234,7 +234,7 @@ body {
       .menu__item {
         letter-spacing: .1rem;
         font-size: 1.8rem;
-        padding: .5rem; } }
+        padding: .1rem; } }
     .menu__item:hover::after {
       content: "";
       width: 100%;
@@ -630,6 +630,9 @@ body {
       display: flex;
       flex-direction: column;
       padding: 0 2rem 2rem 2rem; }
+      @media only screen and (max-width: 26em) {
+        .footer__contact--data-logo {
+          margin: 0 auto; } }
       .footer__contact--data-logo > * {
         width: 20rem;
         height: 20rem;

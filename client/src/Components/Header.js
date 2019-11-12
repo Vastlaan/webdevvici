@@ -13,7 +13,7 @@ function Header(){
 				<Logo className='header__logo--logo'/>
 				<div className='header__logo--name'>
 					<h1 className='header__logo--main'>Imperum</h1>
-					<h3 className='header__logo--sub'>IT Professionals</h3>
+					<h3 className='header__logo--sub'>Web Design</h3>
 				</div>
 				
 			</div>
@@ -21,7 +21,7 @@ function Header(){
 			
 			<ul className='header__services'>
 				<li className='header__services--each'>Web Design |</li>
-				<li className='header__services--each'>Optimisation |</li>
+				<li className='header__services--each'>Zoekmachineoptimalisatie |</li>
 				<li className='header__services--each'>Online Marketing</li>
 			</ul>
 

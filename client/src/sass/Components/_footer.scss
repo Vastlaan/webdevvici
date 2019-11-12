@@ -38,9 +38,15 @@
 
 
 			&-logo{
+
+				@include respond(xs){
+					margin:0 auto;
+				}
+				
 				&>*{
 					width:20rem;
 					height:20rem;
+
 					margin-top: -2rem;
 					filter:contrast(200%);
 				}

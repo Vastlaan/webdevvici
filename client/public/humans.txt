@@ -1,0 +1,21 @@
+/* TEAM */
+
+                            
+Web developer: Michal Antczak.
+
+                            
+Site: https://www.michalantczak.com
+
+                            
+Location: Purmerend, Netherlands.
+
+/* SITE */
+
+                            
+Last update: 12/11/2019 
+
+                            
+Standards: HTML5, CSS3, ES6
+
+                            
+Components: React.

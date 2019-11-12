@@ -35,11 +35,11 @@ const login =async (req,res) =>{
 }
 //the below is hidden in queries.js
 const createUser = (req,res)=>{
-	data={
-		username: user.name,
-		password: bcrypt.hashSync(user.password,10)
-	}
-	db.createUserInDatabase(req,res,data)
+	// data={
+	// 	username: user.name,
+	// 	password: bcrypt.hashSync(user.password,10)
+	// }
+	// db.createUserInDatabase(req,res,data)
 }
 
 module.exports = {

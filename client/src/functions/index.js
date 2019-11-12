@@ -70,7 +70,7 @@ export function changePositionOnScroll(){
 		menu.style.left="0"
 		menu.style.backgroundColor="white"
 		menu.style.width="100%"
-		menu.style.padding="1rem 2rem"
+		menu.style.padding=".5rem 2rem"
 		menu.style.margin="0"
 
 	}else{
