@@ -1,11 +1,13 @@
 //About Component on App
 export function triggerEffectAbout(){
 	const about = document.querySelector('.about__quote')
+	const image = document.querySelector('.about__image')
 		const list1 = document.querySelector('.about__services--list-1')
 		const list2 = document.querySelector('.about__services--list-2')
 		const list3 = document.querySelector('.about__services--list-3')
 
 		const aboutBottomBoundry = (about.offsetHeight / 2) + about.offsetTop
+		const imageBottomBoundry = (image.offsetHeight / 2) + image.offsetTop
 		const list1BottomBoundry = (list1.offsetHeight / 2) + list1.offsetTop
 		const list2BottomBoundry = (list2.offsetHeight / 2) + list2.offsetTop
 		const list3BottomBoundry = (list3.offsetHeight / 2) + list3.offsetTop
@@ -19,6 +21,13 @@ export function triggerEffectAbout(){
 		}else{
 			about.style.opacity="0"
 			about.style.transform="translateX(100%)"
+		}
+		if(imageBottomBoundry<=enterChangeAt){
+			image.style.opacity="1"
+			image.style.transform="translateX(0)"
+		}else{
+			image.style.opacity="0"
+			image.style.transform="translateX(-100%)"
 		}
 
 		if(list1BottomBoundry<=enterChangeAt){

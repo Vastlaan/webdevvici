@@ -21,7 +21,7 @@ function Header(){
 			
 			<ul className='header__services'>
 				<li className='header__services--each'>Web Design |</li>
-				<li className='header__services--each'>Zoekmachineoptimalisatie |</li>
+				<li className='header__services--each'>Zoekmachine Optimalisatie |</li>
 				<li className='header__services--each'>Online Marketing</li>
 			</ul>
 

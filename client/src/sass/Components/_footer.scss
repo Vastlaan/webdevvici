@@ -100,6 +100,7 @@
 				}
 			}
 			&-phone{
+				display:block;
 				margin:2rem 0 1rem 0;
 				z-index: 9;
 				display:flex;
@@ -108,9 +109,11 @@
 				text-decoration: none;
 				font-family: $font-poiret;
 				font-size: 2rem;
-				transition:all .3s;
+				transition:all .15s;
 				&:hover{
-					color:#FFFF4D;
+					display:block;
+					transform: scale(1.05) translateX(1.5rem);
+					color:$color-primary;
 				}
 				@include respond(xs){
 					font-size: 2.8rem;
@@ -138,7 +141,9 @@
 				font-size: 2rem;
 				transition:all .3s;
 				&:hover{
-					color:#FFFF4D;
+					display:block;
+					transform: scale(1.05) translateX(1.5rem);
+					color:$color-primary;
 				}
 				@include respond(xs){
 					font-size: 2.8rem;

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { FaCheckCircle, FaQuoteLeft, FaQuoteRight} from "react-icons/fa";
 import {triggerEffectAbout} from '../functions'
+import About1 from '../img/about-1.jpg'
 
 function About(){
 
@@ -36,6 +37,7 @@ function About(){
 
 			</div>
 
+
 			<div className='about__services'>
 
 				<ul className='about__services--list about__services--list-1'>
@@ -58,6 +60,11 @@ function About(){
 				<p className='about__services--para'>
 					{data.servicespara3}
 				</p>
+			</div>
+
+			
+			<div className='about__image'>
+				<img src={About1} alt=""/>
 			</div>
 
 		</div>
